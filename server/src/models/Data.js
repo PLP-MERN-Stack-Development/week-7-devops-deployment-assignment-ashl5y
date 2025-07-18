@@ -21,7 +21,7 @@ const mongoose = require('mongoose');
     },
 },
   {
-    timestamps: true, // Automatically create createdAt and updatedAt fields
+    timestamps: true, 
   }
 );
 
