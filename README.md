@@ -43,34 +43,34 @@ mern-deployment-project/<br>
 4. Git
 
 ## Local Development Setup
-1. Clone the repository:
+### 1. Clone the repository:
 
   git clone https://github.com/yourusername/mern-deployment-project.git
   cd mern-deployment-project
 
-2. Install dependencies:
+### 2. Install dependencies:
 
-### Install backend dependencies
+  - Install backend dependencies
   cd server
   npm install
 
-### Install frontend dependencies
+  - Install frontend dependencies
   cd ../client
   npm install
 
-3. Set up environment variables:
+### 3. Set up environment variables:
 
-### Create .env file in server directory
+  - Create .env file in server directory
   cp .env.example server/.env
   Edit the .env file with your MongoDB connection string and other settings.
 
-4. Run the application:
+### 4. Run the application:
 
-### Start the backend
+  - Start the backend
   cd server
   npm run dev
 
-# Start the frontend in another terminal
+  - Start the frontend in another terminal
   cd client
   npm run dev
 
