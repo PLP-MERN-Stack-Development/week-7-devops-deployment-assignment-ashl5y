@@ -13,26 +13,26 @@ This project demonstrates a complete MERN stack application with production depl
 </ul>
 
 ### Application Structure
-mern-deployment-project/
-├── client/                # React frontend
-│   ├── src/               # Source files
-│   ├── public/            # Static files
-│   ├── vite.config.js     # Vite configuration
-│   └── package.json       # Frontend dependencies
-├── server/                # Express backend
-│   ├── src/               # Source files
-│   │   ├── config/        # Configuration files
-│   │   ├── controllers/   # Route controllers
-│   │   ├── middleware/    # Custom middleware
-│   │   ├── models/        # Database models
-│   │   ├── routes/        # API routes
-│   │   ├── tests/         # Test files
-│   │   └── utils/         # Utility functions
-│   └── package.json       # Backend dependencies
-├── .github/               # GitHub Actions workflows
-├── deployment/            # Deployment configurations
-├── monitoring/            # Monitoring setup files
-├── .env.example           # Environment variables template
+mern-deployment-project/<br>
+├── client/                # React frontend<br>
+│   ├── src/               # Source files<br>
+│   ├── public/            # Static files<br>
+│   ├── vite.config.js     # Vite configuration<br>
+│   └── package.json       # Frontend dependencies<br>
+├── server/                # Express backend<br>
+│   ├── src/               # Source files<br>
+│   │   ├── config/        # Configuration files<br>
+│   │   ├── controllers/   # Route controllers<br>
+│   │   ├── middleware/    # Custom middleware<br>
+│   │   ├── models/        # Database models<br>
+│   │   ├── routes/        # API routes<br>
+│   │   ├── tests/         # Test files<br>
+│   │   └── utils/         # Utility functions<br>
+│   └── package.json       # Backend dependencies<br>
+├── .github/               # GitHub Actions workflows<br>
+├── deployment/            # Deployment configurations<br>
+├── monitoring/            # Monitoring setup files<br>
+├── .env.example           # Environment variables template<br>
 └── README.md              # Project documentation
 
 ## Getting Started
