@@ -1,78 +1,136 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-2e0aaae1b6195c2367325f4f02e2d04e9abb55f0b24a779b69b11b9e10269abc.svg)](https://classroom.github.com/online_ide?assignment_repo_id=19954747&assignment_repo_type=AssignmentRepo)
-# Deployment and DevOps for MERN Applications
+# MERN Stack Deployment Project
+This project demonstrates a complete MERN stack application with production deployment setup, CI/CD pipeline, and monitoring.
 
-This assignment focuses on deploying a full MERN stack application to production, implementing CI/CD pipelines, and setting up monitoring for your application.
+## Features
+<ul>
+<li><strong>Authentication:</strong> User registration, login, and protected routes</li>
+<li><strong>MongoDB Integration:</strong> Connection to MongoDB Atlas for data storage</li>
+<li><strong>Express Backend:</strong> RESTful API with proper error handling and logging</li>
+<li><strong>React Frontend:</strong> Modern React application with routing and state management</li>
+<li><strong>CI/CD Pipeline:</strong> Automated testing and deployment with GitHub Actions</li>
+<li><strong>Production Deployment:</strong> Deployment configuration for both frontend and backend<li>
+<li><strong>Monitoring:</strong> Health checks and error tracking</li>
+</ul>
 
-## Assignment Overview
-
-You will:
-1. Prepare your MERN application for production deployment
-2. Deploy the backend to a cloud platform
-3. Deploy the frontend to a static hosting service
-4. Set up CI/CD pipelines with GitHub Actions
-5. Implement monitoring and maintenance strategies
+### Application Structure
+mern-deployment-project/
+├── client/                # React frontend
+│   ├── src/               # Source files
+│   ├── public/            # Static files
+│   ├── vite.config.js     # Vite configuration
+│   └── package.json       # Frontend dependencies
+├── server/                # Express backend
+│   ├── src/               # Source files
+│   │   ├── config/        # Configuration files
+│   │   ├── controllers/   # Route controllers
+│   │   ├── middleware/    # Custom middleware
+│   │   ├── models/        # Database models
+│   │   ├── routes/        # API routes
+│   │   ├── tests/         # Test files
+│   │   └── utils/         # Utility functions
+│   └── package.json       # Backend dependencies
+├── .github/               # GitHub Actions workflows
+├── deployment/            # Deployment configurations
+├── monitoring/            # Monitoring setup files
+├── .env.example           # Environment variables template
+└── README.md              # Project documentation
 
 ## Getting Started
+### Prerequisites
+1. Node.js (v18 or higher)
+2. npm or pnpm
+3. MongoDB Atlas account
+4. Git
 
-1. Accept the GitHub Classroom assignment invitation
-2. Clone your personal repository that was created by GitHub Classroom
-3. Follow the setup instructions in the `Week7-Assignment.md` file
-4. Use the provided templates and configuration files as a starting point
+## Local Development Setup
+1. Clone the repository:
 
-## Files Included
+git clone https://github.com/yourusername/mern-deployment-project.git
+cd mern-deployment-project
 
-- `Week7-Assignment.md`: Detailed assignment instructions
-- `.github/workflows/`: GitHub Actions workflow templates
-- `deployment/`: Deployment configuration files and scripts
-- `.env.example`: Example environment variable templates
-- `monitoring/`: Monitoring configuration examples
+2. Install dependencies:
 
-## Requirements
+### Install backend dependencies
+cd server
+npm install
 
-- A completed MERN stack application from previous weeks
-- Accounts on the following services:
-  - GitHub
-  - MongoDB Atlas
-  - Render, Railway, or Heroku (for backend)
-  - Vercel, Netlify, or GitHub Pages (for frontend)
-- Basic understanding of CI/CD concepts
+### Install frontend dependencies
+cd ../client
+npm install
 
-## Deployment Platforms
+3. Set up environment variables:
 
-### Backend Deployment Options
-- **Render**: Easy to use, free tier available
-- **Railway**: Developer-friendly, generous free tier
-- **Heroku**: Well-established, extensive documentation
+### Create .env file in server directory
+cp .env.example server/.env
+Edit the .env file with your MongoDB connection string and other settings.
 
-### Frontend Deployment Options
-- **Vercel**: Optimized for React apps, easy integration
-- **Netlify**: Great for static sites, good CI/CD
-- **GitHub Pages**: Free, integrated with GitHub
+4. Run the application:
+
+### Start the backend
+cd server
+npm run dev
+
+# Start the frontend in another terminal
+cd client
+npm run dev
+
+## Deployment
+### Backend Deployment (Render)
+
+1. Create a new Web Service on Render
+2. Connect your GitHub repository
+3. Use the following settings:
+  - Build Command: cd server && npm ci && npm run build
+  - Start Command: cd server && node dist/index.js
+4. Add the environment variables from your .env file
+5. Deploy the service
+
+### Frontend Deployment (Vercel)
+1. Create a new project on Vercel
+2. Connect your GitHub repository
+3. Set the following:
+  - Framework Preset: Vite
+  - Build Command: cd client && npm ci && npm run build
+  - Output Directory: client/dist
+4. Add the VITE_API_URL environment variable pointing to your backend URL
+5. Deploy the project
 
 ## CI/CD Pipeline
+The project includes GitHub Actions workflows in .github/workflows/:
 
-The assignment includes templates for setting up GitHub Actions workflows:
-- `frontend-ci.yml`: Tests and builds the React application
-- `backend-ci.yml`: Tests the Express.js backend
-- `frontend-cd.yml`: Deploys the frontend to your chosen platform
-- `backend-cd.yml`: Deploys the backend to your chosen platform
+<strong>mern-ci-cd.yml:</strong> Runs tests, builds the application, and deploys to production on pushes to the main branch.
 
-## Submission
+To set up the CI/CD pipeline:
 
-Your work will be automatically submitted when you push to your GitHub Classroom repository. Make sure to:
+1. Add the following secrets to your GitHub repository:
+  RENDER_API_KEY: Your Render API key
+  RENDER_SERVICE_ID: Your Render service ID
+  VERCEL_TOKEN: Your Vercel API token
+  VERCEL_ORG_ID: Your Vercel organization ID
+  VERCEL_PROJECT_ID: Your Vercel project ID
+  BACKEND_URL: URL of your deployed backend
+  FRONTEND_URL: URL of your deployed frontend
 
-1. Complete all deployment tasks
-2. Set up CI/CD pipelines with GitHub Actions
-3. Deploy both frontend and backend to production
-4. Document your deployment process in the README.md
-5. Include screenshots of your CI/CD pipeline in action
-6. Add URLs to your deployed applications
+## Monitoring
+### Health Checks
+The application includes a /api/health endpoint for monitoring the backend status. Use a service like UptimeRobot or StatusCake to set up regular health checks.
 
-## Resources
+### Error Tracking
+For error tracking, you can integrate Sentry:
 
-- [GitHub Actions Documentation](https://docs.github.com/en/actions)
-- [MongoDB Atlas Documentation](https://docs.atlas.mongodb.com/)
-- [Render Documentation](https://render.com/docs)
-- [Railway Documentation](https://docs.railway.app/)
-- [Vercel Documentation](https://vercel.com/docs)
-- [Netlify Documentation](https://docs.netlify.com/) 
+1. Create a Sentry account and project
+2. Follow the integration instructions in monitoring/sentry-setup.js
+3. Add your Sentry DSN to your environment variables
+
+## Maintenance
+### Database Backups
+Set up automated MongoDB Atlas backups:
+
+1. Log in to MongoDB Atlas
+2. Go to your cluster settings
+3. Navigate to “Backup” and enable automated backups
+
+## Regular Updates
+1. Set up dependabot in your repository for automatic dependency updates
+2. Schedule regular code reviews and updates
+3. Monitor for security vulnerabilities

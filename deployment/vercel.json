@@ -1,0 +1,31 @@
+{
+  "name": "mern-client",
+  "version": 2,
+  "builds": [
+    {
+      "src": "client/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "buildCommand": "cd client && npm ci && npm run build",
+        "outputDirectory": "client/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/$1"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/client/dist/index.html",
+      "status": 200
+    }
+  ],
+  "env": {
+    "VITE_API_URL": "https://mern-api.onrender.com/api"
+  },
+  "github": {
+    "silent": true
+  }
+}
