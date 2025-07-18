@@ -60,8 +60,8 @@ mern-deployment-project/<br>
 
 ### 3. Set up environment variables:
 
-  - Create .env file in server directory
-  cp .env.example server/.env
+  - Create .env file in server directory<br>
+  cp .env.example server/.env<br>
   Edit the .env file with your MongoDB connection string and other settings.
 
 ### 4. Run the application:
@@ -134,3 +134,7 @@ Set up automated MongoDB Atlas backups:
 1. Set up dependabot in your repository for automatic dependency updates
 2. Schedule regular code reviews and updates
 3. Monitor for security vulnerabilities
+
+## URLS
+- <strong>Frontend:</strong> [https://week7mern.netlify.app/](https://week7mern.netlify.app/)
+- <strong>Backend:</strong> [https://week-7-devops-deployment-assignment-nvuo.onrender.com](https://week-7-devops-deployment-assignment-nvuo.onrender.com)
