@@ -8,31 +8,31 @@ This project demonstrates a complete MERN stack application with production depl
 <li><strong>Express Backend:</strong> RESTful API with proper error handling and logging</li>
 <li><strong>React Frontend:</strong> Modern React application with routing and state management</li>
 <li><strong>CI/CD Pipeline:</strong> Automated testing and deployment with GitHub Actions</li>
-<li><strong>Production Deployment:</strong> Deployment configuration for both frontend and backend<li>
+<li><strong>Production Deployment:</strong> Deployment configuration for both frontend and backend</li>
 <li><strong>Monitoring:</strong> Health checks and error tracking</li>
 </ul>
 
 ### Application Structure
-mern-deployment-project/
-├── client/                # React frontend
-│   ├── src/               # Source files
-│   ├── public/            # Static files
-│   ├── vite.config.js     # Vite configuration
-│   └── package.json       # Frontend dependencies
-├── server/                # Express backend
-│   ├── src/               # Source files
-│   │   ├── config/        # Configuration files
-│   │   ├── controllers/   # Route controllers
-│   │   ├── middleware/    # Custom middleware
-│   │   ├── models/        # Database models
-│   │   ├── routes/        # API routes
-│   │   ├── tests/         # Test files
-│   │   └── utils/         # Utility functions
-│   └── package.json       # Backend dependencies
-├── .github/               # GitHub Actions workflows
-├── deployment/            # Deployment configurations
-├── monitoring/            # Monitoring setup files
-├── .env.example           # Environment variables template
+mern-deployment-project/<br>
+├── client/                # React frontend<br>
+│   ├── src/               # Source files<br>
+│   ├── public/            # Static files<br>
+│   ├── vite.config.js     # Vite configuration<br>
+│   └── package.json       # Frontend dependencies<br>
+├── server/                # Express backend<br>
+│   ├── src/               # Source files<br>
+│   │   ├── config/        # Configuration files<br>
+│   │   ├── controllers/   # Route controllers<br>
+│   │   ├── middleware/    # Custom middleware<br>
+│   │   ├── models/        # Database models<br>
+│   │   ├── routes/        # API routes<br>
+│   │   ├── tests/         # Test files<br>
+│   │   └── utils/         # Utility functions<br>
+│   └── package.json       # Backend dependencies<br>
+├── .github/               # GitHub Actions workflows<br>
+├── deployment/            # Deployment configurations<br>
+├── monitoring/            # Monitoring setup files<br>
+├── .env.example           # Environment variables template<br>
 └── README.md              # Project documentation
 
 ## Getting Started
@@ -43,36 +43,36 @@ mern-deployment-project/
 4. Git
 
 ## Local Development Setup
-1. Clone the repository:
+### 1. Clone the repository:
 
-git clone https://github.com/yourusername/mern-deployment-project.git
-cd mern-deployment-project
+  git clone https://github.com/yourusername/mern-deployment-project.git
+  cd mern-deployment-project
 
-2. Install dependencies:
+### 2. Install dependencies:
 
-### Install backend dependencies
-cd server
-npm install
+  - Install backend dependencies
+  cd server
+  npm install
 
-### Install frontend dependencies
-cd ../client
-npm install
+  - Install frontend dependencies
+  cd ../client
+  npm install
 
-3. Set up environment variables:
+### 3. Set up environment variables:
 
-### Create .env file in server directory
-cp .env.example server/.env
-Edit the .env file with your MongoDB connection string and other settings.
+  - Create .env file in server directory
+  cp .env.example server/.env
+  Edit the .env file with your MongoDB connection string and other settings.
 
-4. Run the application:
+### 4. Run the application:
 
-### Start the backend
-cd server
-npm run dev
+  - Start the backend
+  cd server
+  npm run dev
 
-# Start the frontend in another terminal
-cd client
-npm run dev
+  - Start the frontend in another terminal
+  cd client
+  npm run dev
 
 ## Deployment
 ### Backend Deployment (Render)
@@ -102,13 +102,13 @@ The project includes GitHub Actions workflows in .github/workflows/:
 
 To set up the CI/CD pipeline:
 
-1. Add the following secrets to your GitHub repository:
-  RENDER_API_KEY: Your Render API key
-  RENDER_SERVICE_ID: Your Render service ID
-  VERCEL_TOKEN: Your Vercel API token
-  VERCEL_ORG_ID: Your Vercel organization ID
-  VERCEL_PROJECT_ID: Your Vercel project ID
-  BACKEND_URL: URL of your deployed backend
+1. Add the following secrets to your GitHub repository:<br>
+  RENDER_API_KEY: Your Render API key<br>
+  RENDER_SERVICE_ID: Your Render service ID<br>
+  VERCEL_TOKEN: Your Vercel API token<br>
+  VERCEL_ORG_ID: Your Vercel organization ID<br>
+  VERCEL_PROJECT_ID: Your Vercel project ID<br>
+  BACKEND_URL: URL of your deployed backend<br>
   FRONTEND_URL: URL of your deployed frontend
 
 ## Monitoring
